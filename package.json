@@ -1,0 +1,16 @@
+{
+  "name": "agenda",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev -w @agenda/api",
+    "dev:web": "npm run dev -w @agenda/web",
+    "dev": "npm run dev:api & npm run dev:web",
+    "db:migrate": "npm run db:migrate -w @agenda/api",
+    "db:seed": "npm run db:seed -w @agenda/api",
+    "db:studio": "npm run db:studio -w @agenda/api"
+  }
+}
