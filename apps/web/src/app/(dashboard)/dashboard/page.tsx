@@ -43,7 +43,7 @@ function StatCard({
 }: StatCardProps) {
   return (
     <div 
-      className="card-hover p-6 flex items-center gap-5 relative overflow-hidden"
+      className="card-hover p-5 flex flex-col justify-between relative overflow-hidden min-h-[135px]"
       style={{
         ['--border-hover' as any]: color,
         ['--shadow-glow' as any]: `0 0 25px ${shadowColor}`,
@@ -55,35 +55,38 @@ function StatCard({
         style={{ background: color }}
       />
       
-      {/* Container do Ícone com Gradiente */}
-      <div
-        className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg"
-        style={{ 
-          background: bgGradient,
-          boxShadow: `0 4px 15px ${shadowColor}`,
-          border: '1px solid rgba(255, 255, 255, 0.1)'
-        }}
-      >
-        <Icon size={22} className="text-white" />
+      {/* Topo: Ícone */}
+      <div className="flex items-center justify-between z-10">
+        <div
+          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg"
+          style={{ 
+            background: bgGradient,
+            boxShadow: `0 4px 12px ${shadowColor}`,
+            border: '1px solid rgba(255, 255, 255, 0.1)'
+          }}
+        >
+          <Icon size={18} className="text-white" />
+        </div>
       </div>
 
-      <div className="min-w-0 z-10">
+      {/* Info na parte inferior */}
+      <div className="mt-4 z-10 flex flex-col gap-0.5">
         <p 
-          className="text-3.5xl font-extrabold tracking-tight text-white" 
+          className="text-3.5xl font-black tracking-tight text-white leading-none" 
           style={{ 
             fontFamily: 'Outfit, sans-serif',
-            lineHeight: 1
           }}
         >
           {value}
         </p>
-        <p className="text-xxs font-bold uppercase tracking-widest mt-1.5" style={{ color: 'var(--text-secondary)', fontSize: '10px' }}>
+        <p className="text-xxs font-bold uppercase tracking-widest text-gray-400 mt-1" style={{ fontSize: '10px' }}>
           {label}
         </p>
       </div>
     </div>
   )
 }
+
 
 export default function DashboardPage() {
   const { data: contents = [], isLoading } = useContents()
