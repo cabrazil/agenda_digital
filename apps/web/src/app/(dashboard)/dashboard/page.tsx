@@ -43,7 +43,7 @@ function StatCard({
 }: StatCardProps) {
   return (
     <div 
-      className="card-hover p-5 flex flex-col justify-between relative overflow-hidden min-h-[135px]"
+      className="card-hover p-4 flex flex-col justify-between relative overflow-hidden min-h-[110px]"
       style={{
         ['--border-hover' as any]: color,
         ['--shadow-glow' as any]: `0 0 25px ${shadowColor}`,
@@ -58,28 +58,28 @@ function StatCard({
       {/* Topo: Ícone */}
       <div className="flex items-center justify-between z-10">
         <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg"
+          className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg"
           style={{ 
             background: bgGradient,
-            boxShadow: `0 4px 12px ${shadowColor}`,
+            boxShadow: `0 4px 10px ${shadowColor}`,
             border: '1px solid rgba(255, 255, 255, 0.1)'
           }}
         >
-          <Icon size={18} className="text-white" />
+          <Icon size={15} className="text-white" />
         </div>
       </div>
 
       {/* Info na parte inferior */}
-      <div className="mt-4 z-10 flex flex-col gap-0.5">
+      <div className="mt-3 z-10 flex flex-col gap-0.5">
         <p 
-          className="text-3.5xl font-black tracking-tight text-white leading-none" 
+          className="text-2.5xl font-black tracking-tight text-white leading-none" 
           style={{ 
             fontFamily: 'Outfit, sans-serif',
           }}
         >
           {value}
         </p>
-        <p className="text-xxs font-bold uppercase tracking-widest text-gray-400 mt-1" style={{ fontSize: '10px' }}>
+        <p className="text-xxs font-bold uppercase tracking-widest text-gray-400 mt-1" style={{ fontSize: '9px' }}>
           {label}
         </p>
       </div>
@@ -135,7 +135,8 @@ export default function DashboardPage() {
       </div>
 
       {/* Métricas */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+
         <StatCard 
           label="Total de Conteúdos" 
           value={contents.length} 
