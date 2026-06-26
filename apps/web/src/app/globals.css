@@ -268,3 +268,19 @@ body {
   animation: shimmer 1.6s infinite;
   border-radius: 8px;
 }
+
+/* Customização do indicador nativo de data/hora (calendário/relógio) */
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(1) opacity(0.55);
+  margin-right: 4px;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+  filter: invert(1) opacity(0.9);
+  background: rgba(255, 255, 255, 0.08);
+}
+
