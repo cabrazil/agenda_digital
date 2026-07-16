@@ -93,7 +93,37 @@ export class ContentService {
     return prisma.content.delete({ where: { id } })
   }
 
+  async duplicate(id: string) {
+    const original = await prisma.content.findUnique({
+      where: { id },
+      include: { tasks: true },
+    })
+
+    if (!original) throw new NotFoundError('Conteúdo')
+
+    return prisma.content.create({
+      data: {
+        title: `${original.title} (Cópia)`,
+        briefing: original.briefing,
+        script: original.script,
+        channel: original.channel,
+        status: 'IDEIA',
+        tags: original.tags,
+        notes: original.notes,
+        tasks: {
+          create: original.tasks.map((t) => ({
+            title: t.title,
+            completed: false,
+            priority: t.priority,
+          })),
+        },
+      },
+      include: { tasks: true },
+    })
+  }
+
   async getStats() {
+
     const [byStatus, byChannel, total] = await Promise.all([
       prisma.content.groupBy({ by: ['status'], _count: true }),
       prisma.content.groupBy({ by: ['channel'], _count: true }),

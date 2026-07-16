@@ -87,3 +87,12 @@ export function useDeleteContent() {
     onSuccess: () => qc.invalidateQueries({ queryKey: ['contents'] }),
   })
 }
+
+export function useDuplicateContent() {
+  const qc = useQueryClient()
+  return useMutation<Content, Error, string>({
+    mutationFn: (id: string) => api.post(`/contents/${id}/duplicate`).then((r) => r.data),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ['contents'] }),
+  })
+}
+

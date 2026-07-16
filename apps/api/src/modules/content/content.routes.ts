@@ -11,5 +11,7 @@ export async function contentRoutes(app: FastifyInstance) {
   app.post('/contents', controller.create.bind(controller))
   app.put('/contents/:id', controller.update.bind(controller))
   app.patch('/contents/:id/status', controller.updateStatus.bind(controller))
+  app.post('/contents/:id/duplicate', controller.duplicate.bind(controller))
   app.delete('/contents/:id', controller.delete.bind(controller))
 }
+

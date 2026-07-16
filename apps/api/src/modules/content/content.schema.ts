@@ -6,7 +6,9 @@ export const channelEnum = z.enum([
   'YOUTUBE_SHORTS',
   'YOUTUBE_LONGO',
   'BLOG',
+  'LETTERBOXD',
 ])
+
 
 export const statusEnum = z.enum([
   'IDEIA',

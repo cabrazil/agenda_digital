@@ -1,13 +1,14 @@
 'use client'
 
 import { useParams, useRouter } from 'next/navigation'
-import { useContent, useUpdateContent, useDeleteContent } from '@/hooks/useContents'
+import { useContent, useUpdateContent, useDeleteContent, useDuplicateContent } from '@/hooks/useContents'
 import { useTasks, useCreateTask, useToggleTask, useDeleteTask } from '@/hooks/useTasks'
 import { useState, useCallback } from 'react'
 import { toast } from 'sonner'
 import {
-  ArrowLeft, Trash2, CheckCircle2, Circle, Plus, ExternalLink, Loader2
+  ArrowLeft, Trash2, CheckCircle2, Circle, Plus, ExternalLink, Loader2, Copy
 } from 'lucide-react'
+
 import { CHANNEL_LABELS, STATUS_LABELS, STATUS_COLORS, STATUS_ORDER, CHANNEL_COLORS, type ContentStatus } from '@/types'
 import { formatDateTime } from '@/lib/utils'
 import debounce from 'lodash.debounce'
@@ -28,6 +29,8 @@ export default function ContentDetailPage() {
   const createTask    = useCreateTask()
   const toggleTask    = useToggleTask(id)
   const deleteTask    = useDeleteTask(id)
+
+  const duplicateContent = useDuplicateContent()
 
   const [newTaskTitle, setNewTaskTitle] = useState('')
   const [scriptValue, setScriptValue]  = useState<string | null>(null)
@@ -68,6 +71,17 @@ export default function ContentDetailPage() {
     })
   }
 
+  async function handleDuplicate() {
+    duplicateContent.mutate(id, {
+      onSuccess: (data) => {
+        toast.success('Pauta duplicada com sucesso!')
+        router.push(`/content/${data.id}`)
+      },
+      onError: (err: any) => toast.error(err.message || 'Erro ao duplicar pauta'),
+    })
+  }
+
+
   if (isLoading) return (
     <div className="max-w-3xl space-y-5">
       <div className="skeleton h-12 w-32" />
@@ -106,9 +120,22 @@ export default function ContentDetailPage() {
               <ExternalLink size={14} /> Ver publicado
             </a>
           )}
+          <button 
+            onClick={handleDuplicate} 
+            disabled={duplicateContent.isPending}
+            className="btn-ghost gap-1.5 text-xs font-semibold py-2 px-4 border border-white/5 hover:border-purple-500/20"
+          >
+            {duplicateContent.isPending ? (
+              <Loader2 size={14} className="animate-spin" />
+            ) : (
+              <Copy size={14} className="text-purple-400" />
+            )}
+            Duplicar Pauta
+          </button>
           <button onClick={handleDelete} className="btn-danger gap-1.5 text-xs font-semibold py-2 px-4">
             <Trash2 size={14} /> Deletar Pauta
           </button>
+
         </div>
       </div>
 

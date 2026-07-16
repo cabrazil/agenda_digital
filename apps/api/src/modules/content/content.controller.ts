@@ -54,8 +54,15 @@ export class ContentController {
     return reply.status(204).send()
   }
 
+  async duplicate(req: FastifyRequest, reply: FastifyReply) {
+    const { id } = req.params as { id: string }
+    const content = await service.duplicate(id)
+    return reply.status(201).send(content)
+  }
+
   async getStats(req: FastifyRequest, reply: FastifyReply) {
     const stats = await service.getStats()
     return reply.send(stats)
   }
 }
+

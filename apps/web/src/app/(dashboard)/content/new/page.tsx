@@ -19,7 +19,9 @@ const CHANNELS: Channel[] = [
   'YOUTUBE_SHORTS',
   'YOUTUBE_LONGO',
   'BLOG',
+  'LETTERBOXD',
 ]
+
 
 export default function NewContentPage() {
   const router = useRouter()

@@ -16,7 +16,9 @@ enum Channel {
   YOUTUBE_SHORTS
   YOUTUBE_LONGO
   BLOG
+  LETTERBOXD
 }
+
 
 enum ContentStatus {
   IDEIA

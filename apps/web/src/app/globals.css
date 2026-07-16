@@ -239,6 +239,8 @@ body {
 .badge-yt-short  { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
 .badge-youtube   { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
 .badge-blog      { background: rgba(99, 102, 241, 0.15); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.3); }
+.badge-letterboxd { background: rgba(0, 224, 84, 0.15); color: #5efb8c; border: 1px solid rgba(0, 224, 84, 0.3); }
+
 
 /* ─── Page title ─────────────────────────────────────────── */
 .page-title {

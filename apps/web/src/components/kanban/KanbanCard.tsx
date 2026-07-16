@@ -13,7 +13,9 @@ const CHANNEL_COLOR: Record<Channel, string> = {
   YOUTUBE_SHORTS: '#ef4444',
   YOUTUBE_LONGO: '#ff0000', 
   BLOG: '#818cf8',
+  LETTERBOXD: '#00e054',
 }
+
 
 interface KanbanCardProps {
   content: Content
