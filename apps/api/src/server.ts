@@ -1,4 +1,6 @@
+import './lib/env'
 import { buildApp } from './app'
+
 
 const app = buildApp()
 const PORT = Number(process.env.PORT) || 3333
