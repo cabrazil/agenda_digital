@@ -17,9 +17,9 @@ export function KanbanColumn({ status, contents }: KanbanColumnProps) {
     <div
       className="flex-shrink-0 w-72 flex flex-col rounded-2xl border transition-all duration-300"
       style={{ 
-        background: 'rgba(11, 11, 19, 0.4)', 
-        borderColor: 'rgba(255, 255, 255, 0.04)',
-        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)'
+        background: 'rgba(22, 28, 45, 0.6)', 
+        borderColor: 'rgba(255, 255, 255, 0.07)',
+        boxShadow: '0 4px 16px rgba(0, 0, 0, 0.12)'
       }}
     >
       {/* Cabeçalho da Coluna com Barra Neon Colorida */}

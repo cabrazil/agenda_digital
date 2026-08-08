@@ -8,12 +8,12 @@ import type { Content, Channel } from '@/types'
 import { CHANNEL_LABELS, STATUS_COLORS } from '@/types'
 
 const CHANNEL_COLOR: Record<Channel, string> = {
-  INSTAGRAM: '#f97316', 
-  TIKTOK: '#cbd5e1', 
+  INSTAGRAM: '#f97316',
+  TIKTOK: '#94a3b8',
   YOUTUBE_SHORTS: '#ef4444',
-  YOUTUBE_LONGO: '#ff0000', 
-  BLOG: '#818cf8',
-  LETTERBOXD: '#00e054',
+  YOUTUBE_LONGO: '#ef4444',
+  BLOG: '#a3e635',
+  LETTERBOXD: '#22c55e',
 }
 
 
@@ -33,31 +33,31 @@ export function KanbanCard({ content, isDragging }: KanbanCardProps) {
       href={`/content/${content.id}`}
       className="block rounded-xl border p-4 transition-all duration-200 group relative overflow-hidden"
       style={{
-        background: isDragging 
-          ? 'rgba(28, 28, 45, 0.95)' 
-          : 'rgba(18, 18, 29, 0.55)',
-        borderColor: isDragging 
-          ? 'rgba(124, 106, 247, 0.6)' 
-          : 'rgba(255, 255, 255, 0.05)',
-        boxShadow: isDragging 
-          ? '0 15px 35px rgba(0, 0, 0, 0.6), 0 0 15px rgba(124, 106, 247, 0.25)' 
-          : '0 2px 8px rgba(0, 0, 0, 0.2)',
+        background: isDragging
+          ? 'rgba(36, 44, 66, 0.98)'
+          : 'rgba(28, 34, 53, 0.75)',
+        borderColor: isDragging
+          ? 'rgba(99, 102, 241, 0.5)'
+          : 'rgba(255, 255, 255, 0.08)',
+        boxShadow: isDragging
+          ? '0 12px 28px rgba(0, 0, 0, 0.4), 0 0 12px rgba(99, 102, 241, 0.2)'
+          : '0 2px 6px rgba(0, 0, 0, 0.15)',
         transform: isDragging ? 'scale(1.02) rotate(1deg)' : 'none',
         cursor: 'grab',
       }}
       onMouseEnter={(e) => {
         if (!isDragging) {
-          e.currentTarget.style.background = 'rgba(28, 28, 45, 0.75)';
-          e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.12)';
-          e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.4)';
+          e.currentTarget.style.background = 'rgba(36, 44, 66, 0.9)';
+          e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.14)';
+          e.currentTarget.style.boxShadow = '0 4px 14px rgba(0, 0, 0, 0.25)';
           e.currentTarget.style.transform = 'translateY(-1px)';
         }
       }}
       onMouseLeave={(e) => {
         if (!isDragging) {
-          e.currentTarget.style.background = 'rgba(18, 18, 29, 0.55)';
-          e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.05)';
-          e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.2)';
+          e.currentTarget.style.background = 'rgba(28, 34, 53, 0.75)';
+          e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+          e.currentTarget.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.15)';
           e.currentTarget.style.transform = 'none';
         }
       }}

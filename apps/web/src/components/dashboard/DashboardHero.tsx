@@ -106,53 +106,26 @@ export function DashboardHero({ totalContents, inProductionCount, postedCount }:
           </div>
         </div>
 
-        {/* Right Column: Visual Overall Progress Circle */}
-        <div className="flex-shrink-0 flex items-center gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] backdrop-blur-md">
-          <div className="relative w-12 h-12 flex items-center justify-center">
-            {/* SVG Progress Circle */}
-            <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
-              <path
-                className="text-white/10"
-                strokeWidth="3.5"
-                stroke="currentColor"
-                fill="none"
-                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <path
-                className="text-purple-500 transition-all duration-1000 ease-out"
-                strokeDasharray={`${completionRate}, 100`}
-                strokeWidth="3.5"
-                strokeLinecap="round"
-                stroke="url(#gradientProgress)"
-                fill="none"
-                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <defs>
-                <linearGradient id="gradientProgress" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#7c6af7" />
-                  <stop offset="100%" stopColor="#ec4899" />
-                </linearGradient>
-              </defs>
-            </svg>
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-              <span className="text-[11px] font-black text-white leading-none" style={{ fontFamily: 'Outfit, sans-serif' }}>
-                {completionRate}%
-              </span>
-            </div>
-          </div>
-
-          <div className="space-y-1 pr-2">
-            <p className="text-xs font-bold text-white uppercase tracking-wider">
-              Status Geral
+        {/* Right Column: Status pill compacto */}
+        <div className="flex-shrink-0 flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.07]">
+          <div className="text-center">
+            <p className="text-2xl font-black text-white leading-none" style={{ fontFamily: 'Outfit, sans-serif' }}>
+              {completionRate}%
             </p>
-            <p className="text-xs text-gray-400">
-              <span className="text-emerald-400 font-bold">{postedCount}</span> de <span className="text-white font-bold">{totalContents}</span> publicados
+            <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-wide mt-0.5">concluídos</p>
+          </div>
+          <div className="w-px h-8 bg-white/10" />
+          <div className="space-y-0.5">
+            <p className="text-xs font-bold text-gray-200">Status Geral</p>
+            <p className="text-[11px] text-gray-400">
+              <span className="text-emerald-400 font-bold">{postedCount}</span>
+              <span className="text-gray-500"> / {totalContents} publicados</span>
             </p>
             <Link
               href="/kanban"
-              className="text-[11px] font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-0.5 mt-1 transition-colors"
+              className="text-[10px] font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-0.5 transition-colors"
             >
-              Ver detalhes <ArrowUpRight size={12} />
+              Ver detalhes <ArrowUpRight size={10} />
             </Link>
           </div>
         </div>
