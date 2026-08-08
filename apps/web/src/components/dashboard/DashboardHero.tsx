@@ -106,24 +106,48 @@ export function DashboardHero({ totalContents, inProductionCount, postedCount }:
           </div>
         </div>
 
-        {/* Right Column: Status pill compacto */}
-        <div className="flex-shrink-0 flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.07]">
-          <div className="text-center">
-            <p className="text-2xl font-black text-white leading-none" style={{ fontFamily: 'Outfit, sans-serif' }}>
-              {completionRate}%
-            </p>
-            <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-wide mt-0.5">concluídos</p>
+        {/* Right Column: Círculo de progresso compacto */}
+        <div className="flex-shrink-0 flex items-center gap-4 px-5 py-4 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+          {/* Círculo SVG reduzido */}
+          <div className="relative w-14 h-14 flex-shrink-0">
+            <svg className="w-full h-full -rotate-90" viewBox="0 0 36 36">
+              <path
+                stroke="rgba(255,255,255,0.1)"
+                strokeWidth="3"
+                fill="none"
+                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+              <path
+                strokeDasharray={`${completionRate}, 100`}
+                strokeWidth="3"
+                strokeLinecap="round"
+                stroke="url(#heroProgress)"
+                fill="none"
+                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+              <defs>
+                <linearGradient id="heroProgress" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#6366f1" />
+                  <stop offset="100%" stopColor="#22c55e" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-sm font-black text-white" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                {completionRate}%
+              </span>
+            </div>
           </div>
-          <div className="w-px h-8 bg-white/10" />
+
           <div className="space-y-0.5">
-            <p className="text-xs font-bold text-gray-200">Status Geral</p>
+            <p className="text-xs font-bold text-gray-200 uppercase tracking-wide">Status Geral</p>
             <p className="text-[11px] text-gray-400">
               <span className="text-emerald-400 font-bold">{postedCount}</span>
               <span className="text-gray-500"> / {totalContents} publicados</span>
             </p>
             <Link
               href="/kanban"
-              className="text-[10px] font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-0.5 transition-colors"
+              className="text-[10px] font-semibold text-slate-300 hover:text-white flex items-center gap-0.5 transition-colors"
             >
               Ver detalhes <ArrowUpRight size={10} />
             </Link>

@@ -16,7 +16,7 @@ export default function DashboardPage() {
   const inProdCount    = contents.filter((c) => !['IDEIA', 'POSTADO'].includes(c.status)).length
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto animate-fadeIn pb-10">
+    <div className="space-y-8 max-w-7xl mx-auto animate-fadeIn pb-10">
       {/* Hero Banner */}
       <DashboardHero
         totalContents={contents.length}
