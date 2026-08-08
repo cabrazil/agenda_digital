@@ -38,10 +38,10 @@ export function DashboardHero({ totalContents, inProductionCount, postedCount }:
 
   return (
     <div className="relative rounded-2xl border overflow-hidden p-6 sm:p-8 glass-panel transition-all duration-300">
-      {/* Dynamic Background Glows */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-500/15 rounded-full blur-[100px] pointer-events-none animate-pulseGlow" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-pink-500/10 rounded-full blur-[90px] pointer-events-none" />
-      <div className="absolute -top-10 -left-10 w-64 h-64 bg-indigo-500/10 rounded-full blur-[80px] pointer-events-none" />
+      {/* Dynamic Background Glows — índigo suave */}
+      <div className="absolute top-0 right-1/4 w-80 h-80 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-500/08 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute -top-10 -left-10 w-56 h-56 bg-indigo-400/08 rounded-full blur-[70px] pointer-events-none" />
 
       {/* Decorative Grid Lines Overlay */}
       <div 
@@ -57,8 +57,8 @@ export function DashboardHero({ totalContents, inProductionCount, postedCount }:
         {/* Left Column: Greeting & Header text */}
         <div className="max-w-2xl space-y-3">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-bold uppercase tracking-wider">
-              <Sparkles size={12} className="text-purple-400" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-bold uppercase tracking-wider">
+              <Sparkles size={12} className="text-indigo-400" />
               {formattedDate || 'Painel de Produção'}
             </span>
 
@@ -82,7 +82,7 @@ export function DashboardHero({ totalContents, inProductionCount, postedCount }:
           <div className="pt-2 flex flex-wrap items-center gap-3">
             <Link
               href="/content/new"
-              className="btn-primary text-xs sm:text-sm font-bold shadow-lg shadow-purple-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all"
+              className="btn-primary text-xs sm:text-sm font-bold shadow-lg shadow-indigo-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all"
             >
               <Plus size={16} />
               Criar Novo Roteiro
@@ -90,17 +90,17 @@ export function DashboardHero({ totalContents, inProductionCount, postedCount }:
 
             <Link
               href="/kanban"
-              className="btn-ghost text-xs sm:text-sm font-semibold hover:border-purple-500/40 hover:text-white"
+              className="btn-ghost text-xs sm:text-sm font-semibold hover:border-indigo-500/40 hover:text-white"
             >
-              <Kanban size={15} className="text-purple-400" />
+              <Kanban size={15} className="text-indigo-400" />
               Abrir Kanban
             </Link>
 
             <Link
               href="/calendar"
-              className="btn-ghost text-xs sm:text-sm font-semibold hover:border-purple-500/40 hover:text-white"
+              className="btn-ghost text-xs sm:text-sm font-semibold hover:border-indigo-500/40 hover:text-white"
             >
-              <Calendar size={15} className="text-pink-400" />
+              <Calendar size={15} className="text-indigo-400" />
               Calendário
             </Link>
           </div>
@@ -108,7 +108,7 @@ export function DashboardHero({ totalContents, inProductionCount, postedCount }:
 
         {/* Right Column: Visual Overall Progress Circle */}
         <div className="flex-shrink-0 flex items-center gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] backdrop-blur-md">
-          <div className="relative w-20 h-20 flex items-center justify-center">
+          <div className="relative w-12 h-12 flex items-center justify-center">
             {/* SVG Progress Circle */}
             <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
               <path
@@ -135,11 +135,8 @@ export function DashboardHero({ totalContents, inProductionCount, postedCount }:
               </defs>
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-              <span className="text-lg font-black text-white leading-none" style={{ fontFamily: 'Outfit, sans-serif' }}>
+              <span className="text-[11px] font-black text-white leading-none" style={{ fontFamily: 'Outfit, sans-serif' }}>
                 {completionRate}%
-              </span>
-              <span className="text-[9px] font-bold text-gray-400 uppercase tracking-tighter mt-0.5">
-                Concluídos
               </span>
             </div>
           </div>
@@ -151,9 +148,9 @@ export function DashboardHero({ totalContents, inProductionCount, postedCount }:
             <p className="text-xs text-gray-400">
               <span className="text-emerald-400 font-bold">{postedCount}</span> de <span className="text-white font-bold">{totalContents}</span> publicados
             </p>
-            <Link 
-              href="/kanban" 
-              className="text-[11px] font-semibold text-purple-400 hover:text-purple-300 flex items-center gap-0.5 mt-1 transition-colors"
+            <Link
+              href="/kanban"
+              className="text-[11px] font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-0.5 mt-1 transition-colors"
             >
               Ver detalhes <ArrowUpRight size={12} />
             </Link>
