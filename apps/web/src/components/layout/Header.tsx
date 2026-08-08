@@ -19,7 +19,7 @@ export function Header() {
     <header
       className="sticky top-0 z-20 flex items-center justify-between px-8 py-4 border-b"
       style={{
-        background: 'rgba(5, 5, 9, 0.75)',
+        background: 'rgba(20, 24, 36, 0.9)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
         borderColor: 'var(--border)',
@@ -29,7 +29,7 @@ export function Header() {
 
       <Link
         href="/content/new"
-        className="btn-primary gap-1.5 shadow-lg shadow-purple-500/10 hover:shadow-purple-500/20"
+        className="btn-primary gap-1.5"
         style={{
           background: 'linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%)',
           color: 'white',
@@ -42,7 +42,7 @@ export function Header() {
           fontWeight: 600,
           textDecoration: 'none',
           transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-          boxShadow: '0 4px 12px rgba(124, 106, 247, 0.25)',
+          boxShadow: '0 4px 12px rgba(99, 102, 241, 0.25)',
           border: 'none',
           cursor: 'pointer',
         }}

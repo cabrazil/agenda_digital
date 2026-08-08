@@ -51,14 +51,14 @@ export function ChannelDistribution({ contents }: ChannelDistributionProps) {
                 boxShadow: `0 4px 14px ${CHANNEL_SHADOWS[channel]}`,
               }}
             >
-              <div className="bg-white/20 rounded-lg w-7 h-7 flex items-center justify-center flex-shrink-0">
-                <span className="text-sm font-black text-white" style={{ fontFamily: 'Outfit, sans-serif' }}>
+              <div className="min-w-0 flex-1">
+                <p className="text-[10px] font-semibold text-white/75 uppercase tracking-wide truncate">
+                  {CHANNEL_LABELS[channel]}
+                </p>
+                <p className="text-xl font-black text-white leading-tight" style={{ fontFamily: 'Outfit, sans-serif' }}>
                   {count}
-                </span>
+                </p>
               </div>
-              <p className="text-xs font-bold text-white truncate leading-tight">
-                {CHANNEL_LABELS[channel]}
-              </p>
             </div>
           )
         })}

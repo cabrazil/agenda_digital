@@ -56,16 +56,14 @@ export function ProductionPipeline({ contents }: ProductionPipelineProps) {
                 boxShadow: `0 4px 14px ${STATUS_SHADOWS[status]}`,
               }}
             >
-              <div className="bg-white/20 rounded-lg w-7 h-7 flex items-center justify-center flex-shrink-0">
-                <span className="text-sm font-black text-white" style={{ fontFamily: 'Outfit, sans-serif' }}>
-                  {count}
-                </span>
-              </div>
-              <div className="min-w-0">
-                <p className="text-xs font-bold text-white truncate leading-tight">
+              <div className="min-w-0 flex-1">
+                <p className="text-[10px] font-semibold text-white/75 uppercase tracking-wide truncate">
                   {STATUS_LABELS[status]}
                 </p>
-                <p className="text-[10px] text-white/70 font-medium">{pct}%</p>
+                <p className="text-xl font-black text-white leading-tight" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                  {count}
+                  <span className="text-[10px] font-semibold text-white/60 ml-1">{pct}%</span>
+                </p>
               </div>
             </div>
           )
