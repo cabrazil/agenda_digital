@@ -7,6 +7,7 @@ export const channelEnum = z.enum([
   'YOUTUBE_LONGO',
   'BLOG',
   'LETTERBOXD',
+  'APP',
 ])
 
 
