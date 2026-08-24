@@ -17,6 +17,7 @@ enum Channel {
   YOUTUBE_LONGO
   BLOG
   LETTERBOXD
+  APP
 }
 
 

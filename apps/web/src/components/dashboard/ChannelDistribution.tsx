@@ -17,8 +17,9 @@ const CHANNEL_GRADIENTS: Record<Channel, string> = {
   TIKTOK:          'linear-gradient(135deg, #334155 0%, #1e293b 100%)',
   YOUTUBE_SHORTS:  'linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)',
   YOUTUBE_LONGO:   'linear-gradient(135deg, #dc2626 0%, #991b1b 100%)',
-  BLOG:            'linear-gradient(135deg, #6366f1 0%, #4338ca 100%)',
+  BLOG:            'linear-gradient(135deg, #84cc16 0%, #4d7c0f 100%)',
   LETTERBOXD:      'linear-gradient(135deg, #22c55e 0%, #15803d 100%)',
+  APP:             'linear-gradient(135deg, #38bdf8 0%, #0284c7 100%)',
 }
 
 const CHANNEL_SHADOWS: Record<Channel, string> = {
@@ -26,8 +27,9 @@ const CHANNEL_SHADOWS: Record<Channel, string> = {
   TIKTOK:          'rgba(51, 65, 85, 0.5)',
   YOUTUBE_SHORTS:  'rgba(239, 68, 68, 0.35)',
   YOUTUBE_LONGO:   'rgba(220, 38, 38, 0.35)',
-  BLOG:            'rgba(99, 102, 241, 0.35)',
+  BLOG:            'rgba(132, 204, 22, 0.35)',
   LETTERBOXD:      'rgba(34, 197, 94, 0.35)',
+  APP:             'rgba(56, 189, 248, 0.35)',
 }
 
 export function ChannelDistribution({ contents }: ChannelDistributionProps) {

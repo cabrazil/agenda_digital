@@ -14,6 +14,7 @@ const CHANNEL_COLOR: Record<Channel, string> = {
   YOUTUBE_LONGO: '#ef4444',
   BLOG: '#a3e635',
   LETTERBOXD: '#22c55e',
+  APP: '#38bdf8',
 }
 
 

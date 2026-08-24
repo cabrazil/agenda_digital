@@ -1,4 +1,4 @@
-export type Channel = 'INSTAGRAM' | 'TIKTOK' | 'YOUTUBE_SHORTS' | 'YOUTUBE_LONGO' | 'BLOG' | 'LETTERBOXD'
+export type Channel = 'INSTAGRAM' | 'TIKTOK' | 'YOUTUBE_SHORTS' | 'YOUTUBE_LONGO' | 'BLOG' | 'LETTERBOXD' | 'APP'
 
 export type ContentStatus =
   | 'IDEIA'
@@ -54,6 +54,7 @@ export const CHANNEL_LABELS: Record<Channel, string> = {
   YOUTUBE_LONGO: 'YouTube',
   BLOG: 'Blog',
   LETTERBOXD: 'Letterboxd',
+  APP: 'App',
 }
 
 export const CHANNEL_COLORS: Record<Channel, string> = {
@@ -61,8 +62,9 @@ export const CHANNEL_COLORS: Record<Channel, string> = {
   TIKTOK: '#cbd5e1',
   YOUTUBE_SHORTS: '#FF0000',
   YOUTUBE_LONGO: '#FF0000',
-  BLOG: '#6366F1',
-  LETTERBOXD: '#00e054',
+  BLOG: '#a3e635',
+  LETTERBOXD: '#22c55e',
+  APP: '#38bdf8',
 }
 
 
