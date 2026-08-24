@@ -20,6 +20,7 @@ const CHANNELS: Channel[] = [
   'YOUTUBE_LONGO',
   'BLOG',
   'LETTERBOXD',
+  'APP',
 ]
 
 
